@@ -1,0 +1,392 @@
+:root {
+    --harvest-green: #245B35;
+    --harvest-gold: #D9A441;
+    --natural-cream: #F5F1E6;
+    --white: #FFFFFF;
+    --dark-text: #333333;
+    --muted: #6c757d;
+    --section-spacing: 5rem;
+}
+
+body {
+    color: var(--dark-text);
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--harvest-green);
+    font-weight: 700;
+}
+
+p {
+    color: var(--dark-text);
+    line-height: 1.7;
+}
+
+.section-padding {
+    padding: var(--section-spacing) 0;
+}
+
+.btn-harvest {
+    background-color: var(--harvest-green);
+    border-color: var(--harvest-green);
+    color: var(--white);
+    border-radius: 999px;
+    padding: 0.8rem 1.5rem;
+    font-weight: 600;
+}
+
+.btn-harvest:hover,
+.btn-harvest:focus {
+    background-color: #1d4a2b;
+    border-color: #1d4a2b;
+    color: var(--white);
+}
+
+.btn-outline-harvest {
+    border: 2px solid var(--harvest-gold);
+    color: var(--harvest-green);
+    border-radius: 999px;
+    padding: 0.8rem 1.5rem;
+    font-weight: 600;
+}
+
+.btn-outline-harvest:hover {
+    background-color: var(--harvest-gold);
+    color: var(--white);
+}
+
+.navbar {
+    border-bottom: 1px solid rgba(36, 91, 53, 0.12);
+}
+
+.brand-logo {
+    width: auto;
+    max-height: 50px;
+    object-fit: contain;
+}
+
+.brand-name {
+    font-weight: 700;
+    color: var(--harvest-green);
+}
+
+.nav-link {
+    color: var(--dark-text) !important;
+    font-weight: 600;
+}
+
+.hero-slider-wrapper {
+    position: relative;
+    min-height: 620px;
+    overflow: hidden;
+}
+
+.hero-slider {
+    position: relative;
+    min-height: 620px;
+}
+
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1;
+    pointer-events: none;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.hero-slide.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+    pointer-events: auto;
+}
+
+.hero-slide img {
+    width: 100%;
+    height: 620px;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(12, 28, 18, 0.35), rgba(12, 28, 18, 0.65));
+}
+
+.hero-slider-wrapper .hero-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+    color: var(--white);
+}
+
+.hero-content h1 {
+    color: var(--white);
+    font-size: clamp(2.5rem, 4vw, 4.4rem);
+    line-height: 1.1;
+    margin-bottom: 1.25rem;
+}
+
+.hero-content p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.15rem;
+    max-width: 650px;
+}
+
+.hero-slider-controls {
+    position: absolute;
+    left: 50%;
+    bottom: 24px;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    z-index: 3;
+}
+
+.hero-slider-btn {
+    width: 42px;
+    height: 42px;
+    border: 1px solid rgba(255,255,255,0.6);
+    border-radius: 50%;
+    background: rgba(255,255,255,0.12);
+    color: var(--white);
+    font-size: 1.2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.hero-slider-dots {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.hero-slider-dots .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 0;
+    background: rgba(255,255,255,0.5);
+    padding: 0;
+    cursor: pointer;
+}
+
+.hero-slider-dots .dot.active {
+    background: var(--harvest-gold);
+    box-shadow: 0 0 0 4px rgba(217, 164, 65, 0.2);
+}
+
+.section-title {
+    margin-bottom: 2rem;
+    font-size: clamp(2rem, 2vw, 3rem);
+}
+
+.card-farm {
+    border: 0;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease;
+    height: 100%;
+}
+
+.card-farm:hover {
+    transform: translateY(-4px);
+}
+
+.card-farm img {
+    height: 240px;
+    object-fit: cover;
+}
+
+.card-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: rgba(36, 91, 53, 0.12);
+    color: var(--harvest-green);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.product-box {
+    background: var(--natural-cream);
+    border-radius: 1rem;
+    padding: 2rem 1.25rem;
+    text-align: center;
+    height: 100%;
+}
+
+.product-box .icon {
+    font-size: 2.5rem;
+    color: var(--harvest-gold);
+    margin-bottom: 0.75rem;
+}
+
+.feature-list li {
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: start;
+    gap: 0.75rem;
+}
+
+.feature-list i {
+    color: var(--harvest-green);
+    margin-top: 0.2rem;
+}
+
+.site-footer {
+    background: #1c2d1f;
+    color: rgba(255,255,255,0.8);
+    margin-top: 4rem;
+}
+
+.site-footer h5,
+.site-footer h6 {
+    color: var(--white);
+}
+
+.footer-links a,
+.site-footer p,
+.site-footer li {
+    color: rgba(255,255,255,0.78);
+    text-decoration: none;
+}
+
+.social-links {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.social-links a {
+    display: inline-flex;
+    width: 38px;
+    height: 38px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+    color: var(--white);
+}
+
+.whatsapp-float {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 12px 28px rgba(37, 211, 102, 0.35);
+    z-index: 1000;
+    font-size: 1.9rem;
+}
+
+.hero-badges {
+    display: flex;
+    gap: .75rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
+.badge-soft {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+    color: var(--white);
+    border-radius: 999px;
+    padding: 0.6rem 1rem;
+    font-weight: 600;
+}
+
+.article-card {
+    background: var(--white);
+    border: 1px solid rgba(36, 91, 53, 0.08);
+    border-radius: 1rem;
+    overflow: hidden;
+    height: 100%;
+}
+
+.article-card img {
+    height: 220px;
+    object-fit: cover;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    height: 250px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery-item .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(8, 18, 12, 0.25);
+    color: white;
+    display: flex;
+    align-items: end;
+    padding: 1rem;
+    font-weight: 600;
+}
+
+.page-banner {
+    background: linear-gradient(rgba(18, 50, 28, 0.7), rgba(18, 50, 28, 0.7));
+    color: var(--white);
+    padding: 5rem 0 3rem;
+}
+
+.page-banner h1 {
+    color: var(--white);
+}
+
+.form-card {
+    background: var(--white);
+    border: 1px solid rgba(36, 91, 53, 0.08);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+}
+
+label {
+    font-weight: 600;
+    color: var(--dark-text);
+}
+
+input, select, textarea {
+    border-radius: 0.75rem !important;
+}
+
+@media (max-width: 991px) {
+    .hero-section {
+        min-height: 540px;
+    }
+}

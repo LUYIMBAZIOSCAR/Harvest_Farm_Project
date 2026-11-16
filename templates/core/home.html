@@ -1,0 +1,307 @@
+{% extends 'base.html' %}
+
+{% block title %}Harvest Farm | Sustainable Agriculture & Learning{% endblock %}
+{% block meta_description %}Harvest Farm is a sustainable production and learning farm focused on poultry, goats, dairy, banana cultivation, and practical agricultural education.{% endblock %}
+
+{% load static %}
+{% block content %}
+<section class="hero-slider-wrapper">
+    <div class="hero-slider">
+        <div class="hero-slide active">
+            <img src="{% static 'images/slider_image1.jpeg' %}" alt="Harvest Farm field view" />
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <div class="row align-items-center">
+                    <div class="col-lg-8">
+                        <p class="text-uppercase fw-semibold text-warning mb-3">Welcome to Harvest Farm</p>
+                        <h1>Growing Knowledge. Nurturing Nature. Harvesting the Future.</h1>
+                        <p>Welcome to Harvest Farm, where sustainable agriculture meets practical learning. Discover our farming activities, explore innovative agricultural practices and grow with us.</p>
+                        <div class="d-flex flex-wrap gap-3 mt-4">
+                            <a href="#about" class="btn btn-harvest">Explore Our Farm</a>
+                            <a href="{% url 'book_tour' %}" class="btn btn-outline-light">Book a Farm Tour</a>
+                        </div>
+                        <div class="hero-badges">
+                            <span class="badge-soft">Poultry Farming</span>
+                            <span class="badge-soft">Goat Farming</span>
+                            <span class="badge-soft">Dairy Farming</span>
+                            <span class="badge-soft">Banana Production</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-slide">
+            <img src="{% static 'images/slider_image2.jpeg' %}" alt="Harvest Farm livestock and farm activities" />
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <div class="row align-items-center">
+                    <div class="col-lg-8">
+                        <p class="text-uppercase fw-semibold text-warning mb-3">Sustainable production</p>
+                        <h1>Practical farming systems that grow food and knowledge.</h1>
+                        <p>See how our poultry, goats, cattle, dairy and banana production work together to support resilient and productive farming.</p>
+                        <div class="d-flex flex-wrap gap-3 mt-4">
+                            <a href="{% url 'about' %}" class="btn btn-harvest">Learn More</a>
+                            <a href="{% url 'gallery' %}" class="btn btn-outline-light">View Gallery</a>
+                        </div>
+                        <div class="hero-badges">
+                            <span class="badge-soft">Farm Visits</span>
+                            <span class="badge-soft">Agri Education</span>
+                            <span class="badge-soft">Sustainability</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-slide">
+            <img src="{% static 'images/slider_image3.jpeg' %}" alt="Harvest Farm learning environment" />
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <div class="row align-items-center">
+                    <div class="col-lg-8">
+                        <p class="text-uppercase fw-semibold text-warning mb-3">Learning on the farm</p>
+                        <h1>Hands-on agricultural learning for the next generation.</h1>
+                        <p>Explore real farming lessons, practical demonstrations, and skills that make agriculture more productive, sustainable and inspiring.</p>
+                        <div class="d-flex flex-wrap gap-3 mt-4">
+                            <a href="{% url 'book_tour' %}" class="btn btn-harvest">Book a Tour</a>
+                            <a href="{% url 'article_list' %}" class="btn btn-outline-light">Explore Resources</a>
+                        </div>
+                        <div class="hero-badges">
+                            <span class="badge-soft">Demo Farm</span>
+                            <span class="badge-soft">Hands-on Learning</span>
+                            <span class="badge-soft">Community Impact</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-slider-controls">
+        <button class="hero-slider-btn prev" type="button" aria-label="Previous slide">&#10094;</button>
+        <div class="hero-slider-dots" aria-label="Slider navigation">
+            <button class="dot active" type="button" aria-label="Go to slide 1"></button>
+            <button class="dot" type="button" aria-label="Go to slide 2"></button>
+            <button class="dot" type="button" aria-label="Go to slide 3"></button>
+        </div>
+        <button class="hero-slider-btn next" type="button" aria-label="Next slide">&#10095;</button>
+    </div>
+</section>
+
+<section id="about" class="section-padding">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+                <img src="https://images.unsplash.com/photo-1464226184884-fa52ac9fcf4a?auto=format&fit=crop&w=900&q=80" alt="Harvest Farm agricultural fields" class="img-fluid rounded-4 shadow-sm">
+            </div>
+            <div class="col-lg-6">
+                <p class="text-uppercase fw-semibold text-warning mb-3">Our farm</p>
+                <h2 class="section-title">A sustainable farm built for learning, production, and impact.</h2>
+                <p>{% if site_farm and site_farm.story %}{{ site_farm.story }}{% else %}Harvest Farm is a mixed agricultural enterprise focused on poultry, goat, cattle and dairy, and banana production. The farm is committed to practical agricultural learning, productive farm management, and sustainable practices that can be adopted by smallholder farmers and institutions alike.{% endif %}</p>
+                <p>{% if site_farm and site_farm.mission %}{{ site_farm.mission }}{% else %}Our mission is to combine food production with practical demonstration, farmer education, and responsible environmental stewardship.{% endif %}</p>
+                <a href="{% url 'about' %}" class="btn btn-harvest mt-3">Learn More About Us</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-padding bg-light-subtle">
+    <div class="container">
+        <div class="text-center mb-5">
+            <p class="text-uppercase fw-semibold text-warning mb-2">Our activities</p>
+            <h2 class="section-title">Farming activities</h2>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6 col-xl-3">
+                <div class="card card-farm h-100">
+                    <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80" alt="Poultry farming at Harvest Farm">
+                    <div class="card-body">
+                        <div class="card-icon"><i class="bi bi-bird"></i></div>
+                        <h4>Poultry Farming</h4>
+                        <p>Healthy, well-managed poultry systems supporting productive, sustainable egg and meat enterprises.</p>
+                        <a href="{% url 'about' %}" class="btn btn-link px-0 text-success fw-semibold">Explore activity</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <div class="card card-farm h-100">
+                    <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=800&q=80" alt="Goat farming at Harvest Farm">
+                    <div class="card-body">
+                        <div class="card-icon"><i class="bi bi-emoji-smile"></i></div>
+                        <h4>Goat Farming</h4>
+                        <p>Practical goat management techniques that improve productivity, health, and sustainable herd care.</p>
+                        <a href="{% url 'about' %}" class="btn btn-link px-0 text-success fw-semibold">Explore activity</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <div class="card card-farm h-100">
+                    <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=800&q=80" alt="Cattle and dairy farming at Harvest Farm">
+                    <div class="card-body">
+                        <div class="card-icon"><i class="bi bi-cow"></i></div>
+                        <h4>Cattle and Dairy Farming</h4>
+                        <p>Responsible dairy management focused on herd welfare, milk quality, and improved production systems.</p>
+                        <a href="{% url 'about' %}" class="btn btn-link px-0 text-success fw-semibold">Explore activity</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <div class="card card-farm h-100">
+                    <img src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=800&q=80" alt="Banana plantation at Harvest Farm">
+                    <div class="card-body">
+                        <div class="card-icon"><i class="bi bi-flower1"></i></div>
+                        <h4>Banana Plantation</h4>
+                        <p>Fruit production and plantation management practices that support soil health and long-term farm viability.</p>
+                        <a href="{% url 'about' %}" class="btn btn-link px-0 text-success fw-semibold">Explore activity</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-padding">
+    <div class="container">
+        <div class="text-center mb-5">
+            <p class="text-uppercase fw-semibold text-warning mb-2">Our products</p>
+            <h2 class="section-title">Main agricultural products</h2>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="product-box">
+                    <div class="icon"><i class="bi bi-egg"></i></div>
+                    <h4>Fresh Matooke</h4>
+                    <p>Nutritious, fresh farm produce cultivated with careful field management and quality practices.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="product-box">
+                    <div class="icon"><i class="bi bi-egg-fill"></i></div>
+                    <h4>Fresh Eggs</h4>
+                    <p>Eggs produced through poultry systems designed around health, productivity and consistency.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="product-box">
+                    <div class="icon"><i class="bi bi-droplet-half"></i></div>
+                    <h4>Fresh Milk</h4>
+                    <p>Milk from well-managed dairy operations that prioritise animal welfare and quality control.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-padding bg-light-subtle">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-6">
+                <p class="text-uppercase fw-semibold text-warning mb-3">Why visit</p>
+                <h2 class="section-title">Why visit Harvest Farm?</h2>
+                <ul class="list-unstyled feature-list mt-4">
+                    <li><i class="bi bi-check-circle-fill"></i><span><strong>Practical agricultural learning:</strong> See how sustainable farm systems are run in real conditions.</span></li>
+                    <li><i class="bi bi-check-circle-fill"></i><span><strong>Sustainable farming practices:</strong> Learn about soil care, animal health, and responsible production.</span></li>
+                    <li><i class="bi bi-check-circle-fill"></i><span><strong>Agricultural demonstrations:</strong> Explore the farm as a live demonstration and learning site.</span></li>
+                    <li><i class="bi bi-check-circle-fill"></i><span><strong>Knowledge sharing:</strong> Engage with farming ideas that can be adopted in your own context.</span></li>
+                    <li><i class="bi bi-check-circle-fill"></i><span><strong>Farmer empowerment:</strong> Access practical knowledge to build stronger and more resilient enterprises.</span></li>
+                </ul>
+            </div>
+            <div class="col-lg-6">
+                <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=900&q=80" alt="Farm visitors learning at Harvest Farm" class="img-fluid rounded-4 shadow-sm">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-padding">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
+            <div>
+                <p class="text-uppercase fw-semibold text-warning mb-2">Latest knowledge</p>
+                <h2 class="section-title mb-0">Featured Knowledge Hub articles</h2>
+            </div>
+            <a href="{% url 'article_list' %}" class="btn btn-outline-harvest">View all articles</a>
+        </div>
+        <div class="row g-4">
+            {% for article in featured_articles %}
+            <div class="col-lg-4">
+                <article class="article-card h-100">
+                    {% if article.featured_image %}
+                        <img src="{{ article.featured_image.url }}" alt="{{ article.title }}">
+                    {% else %}
+                        <img src="https://images.unsplash.com/photo-1464226184884-fa52ac9fcf4a?auto=format&fit=crop&w=800&q=80" alt="{{ article.title }}">
+                    {% endif %}
+                    <div class="p-3">
+                        <div class="small text-muted mb-2">{{ article.category.name }} • {{ article.published_at|date:'M d, Y' }}</div>
+                        <h4>{{ article.title }}</h4>
+                        <p>{{ article.excerpt|striptags|truncatechars:120 }}</p>
+                        <a href="{% url 'article_detail' article.slug %}" class="btn btn-link px-0 text-success fw-semibold">Read article</a>
+                    </div>
+                </article>
+            </div>
+            {% empty %}
+            <div class="col-12">
+                <div class="alert alert-light border">No published articles are available yet. Administrators can add Knowledge Hub articles from the Django admin.</div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="section-padding bg-light-subtle">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
+            <div>
+                <p class="text-uppercase fw-semibold text-warning mb-2">Photo stories</p>
+                <h2 class="section-title mb-0">Gallery preview</h2>
+            </div>
+            <a href="{% url 'gallery' %}" class="btn btn-outline-harvest">View gallery</a>
+        </div>
+        <div class="row g-4">
+            {% for item in featured_gallery %}
+            <div class="col-md-6 col-lg-4">
+                <div class="gallery-item">
+                    {% if item.image %}
+                        <img src="{{ item.image.url }}" alt="{{ item.title }}">
+                    {% else %}
+                        <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=800&q=80" alt="{{ item.title }}">
+                    {% endif %}
+                    <div class="overlay">{{ item.title }}</div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="col-12">
+                <div class="alert alert-light border">No featured gallery items have been added yet.</div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="section-padding">
+    <div class="container">
+        <div class="text-center py-5 px-4 rounded-4 bg-success-subtle border border-success-subtle">
+            <p class="text-uppercase fw-semibold text-warning mb-2">Partnerships</p>
+            <h2 class="section-title mb-3">Collaborate with Harvest Farm</h2>
+            <p class="mx-auto mb-4" style="max-width: 700px;">We welcome partnerships with agricultural institutions, universities, NGOs, researchers, development groups, and farming communities seeking practical learning and collaborative agricultural development.</p>
+            <a href="{% url 'partnerships' %}" class="btn btn-harvest">Apply for Partnership</a>
+        </div>
+    </div>
+</section>
+
+<section class="section-padding pt-0">
+    <div class="container">
+        <div class="row align-items-center g-4 bg-dark text-white rounded-4 overflow-hidden">
+            <div class="col-lg-8 p-5">
+                <p class="text-uppercase fw-semibold text-warning mb-2">Farm tours</p>
+                <h2 class="section-title text-white mb-3">Plan a meaningful educational visit</h2>
+                <p class="mb-0">Request a guided farm visit to learn about poultry, goats, dairy, banana production and sustainable agricultural practices in a real farm setting.</p>
+            </div>
+            <div class="col-lg-4 p-5 text-lg-end">
+                <a href="{% url 'book_tour' %}" class="btn btn-harvest">Request a Visit</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

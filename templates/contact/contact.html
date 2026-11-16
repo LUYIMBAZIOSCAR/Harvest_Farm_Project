@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact Harvest Farm{% endblock %}
+{% block meta_description %}Contact Harvest Farm for enquiries, tours, partnerships, and agricultural learning opportunities.{% endblock %}
+
+{% block content %}
+<section class="page-banner">
+    <div class="container">
+        <h1>Contact Us</h1>
+        <p class="mb-0">We are ready to answer your enquiries and support your agricultural learning needs.</p>
+    </div>
+</section>
+
+<section class="section-padding">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-5">
+                <h2 class="section-title">Get in touch</h2>
+                {% if site_farm %}
+                    <ul class="list-unstyled feature-list">
+                        <li><i class="bi bi-telephone"></i><span>{{ site_farm.contact_phone }}</span></li>
+                        <li><i class="bi bi-whatsapp"></i><span>{{ site_farm.whatsapp_number }}</span></li>
+                        <li><i class="bi bi-envelope"></i><span>{{ site_farm.email }}</span></li>
+                        <li><i class="bi bi-geo-alt"></i><span>{{ site_farm.physical_location }}</span></li>
+                        <li><i class="bi bi-clock"></i><span>{{ site_farm.operating_hours }}</span></li>
+                    </ul>
+                {% else %}
+                    <ul class="list-unstyled feature-list">
+                        <li><i class="bi bi-telephone"></i><span>Phone number placeholder</span></li>
+                        <li><i class="bi bi-envelope"></i><span>hello@harvestfarm.local</span></li>
+                        <li><i class="bi bi-geo-alt"></i><span>Farm location placeholder</span></li>
+                    </ul>
+                {% endif %}
+                <div class="mt-4">
+                    <a href="https://wa.me/{{ whatsapp_number|cut:'+'|default:'256000000000' }}?text=Hello%20Harvest%20Farm%2C%20I%20visited%20your%20website%20and%20would%20like%20to%20make%20an%20enquiry." class="btn btn-harvest" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
+                </div>
+                <div class="mt-4">
+                    <iframe
+                        width="100%"
+                        height="300"
+                        class="rounded-4 border-0"
+                        src="{% if site_farm and site_farm.google_maps_embed_url %}{{ site_farm.google_maps_embed_url }}{% else %}https://www.google.com/maps?q=Kampala&output=embed{% endif %}"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        allowfullscreen>
+                    </iframe>
+                    {% if site_farm and site_farm.google_maps_directions_url %}
+                        <a href="{{ site_farm.google_maps_directions_url }}" class="btn btn-outline-harvest mt-3" target="_blank" rel="noopener noreferrer">Get Directions</a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="form-card">
+                    <h3 class="mb-4">Send a Message</h3>
+                    <form method="post">
+                        {% csrf_token %}
+                        {% for field in form %}
+                            <div class="mb-3">
+                                {{ field.label_tag }}
+                                {{ field }}
+                                {% if field.errors %}
+                                    <div class="text-danger small">{{ field.errors }}</div>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                        <button type="submit" class="btn btn-harvest w-100">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

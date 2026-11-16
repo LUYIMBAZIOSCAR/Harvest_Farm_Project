@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}Book a Farm Tour | Harvest Farm{% endblock %}
+{% block meta_description %}Request a farm tour at Harvest Farm to learn about poultry, goat farming, dairy, banana production, organic practices, and sustainable agriculture.{% endblock %}
+
+{% block content %}
+<section class="page-banner">
+    <div class="container">
+        <h1>Book a Farm Tour</h1>
+        <p class="mb-0">Plan an educational visit to see practical farming in action.</p>
+    </div>
+</section>
+
+<section class="section-padding">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-6">
+                <h2 class="section-title">Why visit Harvest Farm?</h2>
+                <p>Visitors can experience first-hand agricultural learning through guided exposure to poultry, goats, cattle and dairy systems, banana production, and sustainable farm management practices.</p>
+                <ul class="list-unstyled feature-list">
+                    <li><i class="bi bi-check-circle-fill"></i><span>Learn practical and sustainable farming methods</span></li>
+                    <li><i class="bi bi-check-circle-fill"></i><span>Explore multiple farm enterprises in one place</span></li>
+                    <li><i class="bi bi-check-circle-fill"></i><span>Suitable for farmers, students, institutions, researchers, and visitors</span></li>
+                    <li><i class="bi bi-check-circle-fill"></i><span>Tailored visits based on your interest and purpose</span></li>
+                </ul>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-card">
+                    <h3 class="mb-4">Request Your Visit</h3>
+                    <form method="post">
+                        {% csrf_token %}
+                        {% for field in form %}
+                            <div class="mb-3">
+                                {{ field.label_tag }}
+                                {{ field }}
+                                {% if field.errors %}
+                                    <div class="text-danger small">{{ field.errors }}</div>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                        <button type="submit" class="btn btn-harvest w-100">Submit Booking Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

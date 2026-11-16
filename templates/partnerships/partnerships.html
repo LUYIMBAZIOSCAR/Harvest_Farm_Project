@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}Partnerships | Harvest Farm{% endblock %}
+{% block meta_description %}Partner with Harvest Farm for training, research, development, institutional collaboration, sponsorship and agricultural innovation initiatives.{% endblock %}
+
+{% block content %}
+<section class="page-banner">
+    <div class="container">
+        <h1>Partnerships</h1>
+        <p class="mb-0">Collaborating for sustainable agricultural growth and farmer education.</p>
+    </div>
+</section>
+
+<section class="section-padding">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-6">
+                <h2 class="section-title">We welcome collaboration</h2>
+                <p>Harvest Farm welcomes partnerships with agricultural institutions, universities, NGOs, development organizations, farmers’ groups, cooperatives, researchers, extension workers, and agricultural input suppliers.</p>
+                <ul class="list-unstyled feature-list">
+                    <li><i class="bi bi-check-circle-fill"></i><span>Training and capacity building</span></li>
+                    <li><i class="bi bi-check-circle-fill"></i><span>Research and innovation</span></li>
+                    <li><i class="bi bi-check-circle-fill"></i><span>Agricultural development partnerships</span></li>
+                    <li><i class="bi bi-check-circle-fill"></i><span>Institutional collaboration</span></li>
+                    <li><i class="bi bi-check-circle-fill"></i><span>Sponsorship and institutional support</span></li>
+                </ul>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-card">
+                    <h3 class="mb-4">Apply for Partnership</h3>
+                    <form method="post">
+                        {% csrf_token %}
+                        {% for field in form %}
+                            <div class="mb-3">
+                                {{ field.label_tag }}
+                                {{ field }}
+                                {% if field.errors %}
+                                    <div class="text-danger small">{{ field.errors }}</div>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                        <button type="submit" class="btn btn-harvest w-100">Submit Partnership Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

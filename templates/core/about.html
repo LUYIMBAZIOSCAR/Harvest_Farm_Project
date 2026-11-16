@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+
+{% block title %}About Harvest Farm{% endblock %}
+{% block meta_description %}Learn about Harvest Farm, its mission, vision, agricultural activities, and sustainable farming philosophy.{% endblock %}
+
+{% block content %}
+<section class="page-banner">
+    <div class="container">
+        <h1>About Harvest Farm</h1>
+        <p class="mb-0">A production and learning farm committed to sustainable agriculture and practical farmer education.</p>
+    </div>
+</section>
+
+<section class="section-padding">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-6">
+                <img src="https://images.unsplash.com/photo-1464226184884-fa52ac9fcf4a?auto=format&fit=crop&w=900&q=80" alt="Harvest Farm working fields" class="img-fluid rounded-4 shadow-sm">
+            </div>
+            <div class="col-lg-6">
+                <p class="text-uppercase fw-semibold text-warning mb-3">Our story</p>
+                <h2 class="section-title">Our Story</h2>
+                <p>{% if site_farm and site_farm.story %}{{ site_farm.story }}{% else %}Harvest Farm is a mixed agricultural enterprise committed to practical farming education, production, and demonstration. Our goal is to support sustainable agricultural development by combining modern best practices with real, hands-on farm experience.{% endif %}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-padding bg-light-subtle">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card card-farm h-100 p-4">
+                    <div class="card-icon"><i class="bi bi-bullseye"></i></div>
+                    <h3>Our Mission</h3>
+                    <p>{% if site_farm and site_farm.mission %}{{ site_farm.mission }}{% else %}To produce food responsibly while creating a practical learning environment where farmers, students, and institutions can gain real knowledge and strengthen their agricultural capacity.{% endif %}</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card card-farm h-100 p-4">
+                    <div class="card-icon"><i class="bi bi-eye"></i></div>
+                    <h3>Our Vision</h3>
+                    <p>{% if site_farm and site_farm.vision %}{{ site_farm.vision }}{% else %}To become a model farm and agricultural learning centre that supports practical, sustainable, and inclusive agricultural development for communities and institutions.{% endif %}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-padding">
+    <div class="container">
+        <h2 class="section-title text-center">Our Farming Philosophy</h2>
+        <div class="row g-4">
+            <div class="col-lg-12">
+                <div class="card card-farm p-4">
+                    <p>{% if site_farm and site_farm.farming_philosophy %}{{ site_farm.farming_philosophy }}{% else %}We believe that healthy soil, proper animal care, responsible resource use, and informed decision-making are the foundations of successful agriculture. The farm is designed to demonstrate practical methods that are realistic, sustainable, and scalable for different farm contexts.{% endif %}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-padding bg-light-subtle">
+    <div class="container">
+        <h2 class="section-title text-center">Our Agricultural Activities</h2>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="card card-farm p-4 h-100">
+                    <div class="card-icon"><i class="bi bi-bird"></i></div>
+                    <h4>Poultry Farming</h4>
+                    <p>Responsible care, disease prevention, efficient housing, and productivity-focused flock management.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card card-farm p-4 h-100">
+                    <div class="card-icon"><i class="bi bi-emoji-smile"></i></div>
+                    <h4>Goat Farming</h4>
+                    <p>Healthy goat rearing methods that support feeding, breeding, health, and business viability.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card card-farm p-4 h-100">
+                    <div class="card-icon"><i class="bi bi-cow"></i></div>
+                    <h4>Dairy Farming</h4>
+                    <p>Best practices in herd management, milk hygiene, nutrition, and sustainable dairy production.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card card-farm p-4 h-100">
+                    <div class="card-icon"><i class="bi bi-flower1"></i></div>
+                    <h4>Banana Production</h4>
+                    <p>Sustainable plantation management, crop health, and long-term productivity for banana farming.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-padding">
+    <div class="container">
+        <div class="card card-farm p-4 p-lg-5">
+            <h2 class="section-title">Our Commitment to Sustainable Agriculture</h2>
+            <p>{% if site_farm and site_farm.sustainable_commitment %}{{ site_farm.sustainable_commitment }}{% else %}We promote responsible, organic-minded, and efficient farming systems that protect the environment, improve livelihoods, and create practical knowledge for future agricultural growth.{% endif %}</p>
+        </div>
+    </div>
+</section>
+
+<section class="section-padding pt-0">
+    <div class="container">
+        <div class="text-center py-5 px-4 rounded-4 bg-success-subtle border border-success-subtle">
+            <h2 class="section-title mb-3">Visit the farm and learn by doing</h2>
+            <p class="mx-auto mb-4" style="max-width: 700px;">Join us for guided learning experiences designed for farmers, students, institutions, and agricultural development partners.</p>
+            <a href="{% url 'book_tour' %}" class="btn btn-harvest">Book a Farm Tour</a>
+        </div>
+    </div>
+</section>
+{% endblock %}
