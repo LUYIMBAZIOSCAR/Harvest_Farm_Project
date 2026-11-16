@@ -11,7 +11,7 @@ urlpatterns = [
     path('book-tour/', include('bookings.urls')),
     path('contact/', include('contact.urls')),
     path('admin/', admin.site.urls),
-    path('ckeditor/', include('ckeditor_uploader.urls')),
+    path('ckeditor/', include('django_ckeditor_5.urls')),
 ]
 
 if settings.DEBUG:

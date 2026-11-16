@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils.text import slugify
-from ckeditor.fields import RichTextField
+from django_ckeditor_5.fields import CKEditor5Field
 
 
 class ArticleCategory(models.Model):
@@ -31,7 +31,7 @@ class Article(models.Model):
     title = models.CharField(max_length=250)
     slug = models.SlugField(max_length=250, unique=True, blank=True)
     excerpt = models.TextField(help_text='Short summary shown in the listing')
-    content = RichTextField()
+    content = CKEditor5Field()
     category = models.ForeignKey(ArticleCategory, on_delete=models.SET_NULL, null=True, blank=True, related_name='articles')
     featured_image = models.ImageField(upload_to='articles/', blank=True, null=True)
     author = models.CharField(max_length=120, default='Harvest Farm Team')
