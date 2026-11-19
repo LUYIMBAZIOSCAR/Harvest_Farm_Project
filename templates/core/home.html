@@ -93,7 +93,7 @@
     <div class="container">
         <div class="row align-items-center g-5">
             <div class="col-lg-6">
-                <img src="https://images.unsplash.com/photo-1464226184884-fa52ac9fcf4a?auto=format&fit=crop&w=900&q=80" alt="Harvest Farm agricultural fields" class="img-fluid rounded-4 shadow-sm">
+                <img src="{% static 'images/farm_image1.jpeg' %}" alt="Harvest Farm overview" class="img-fluid rounded-4 shadow-sm">
             </div>
             <div class="col-lg-6">
                 <p class="text-uppercase fw-semibold text-warning mb-3">Our farm</p>
@@ -115,9 +115,8 @@
         <div class="row g-4">
             <div class="col-md-6 col-xl-3">
                 <div class="card card-farm h-100">
-                    <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80" alt="Poultry farming at Harvest Farm">
+                    <img src="{% static 'images/farm_image2.jpeg' %}" alt="Poultry farming at Harvest Farm">
                     <div class="card-body">
-                        <div class="card-icon"><i class="bi bi-bird"></i></div>
                         <h4>Poultry Farming</h4>
                         <p>Healthy, well-managed poultry systems supporting productive, sustainable egg and meat enterprises.</p>
                         <a href="{% url 'about' %}" class="btn btn-link px-0 text-success fw-semibold">Explore activity</a>
@@ -126,9 +125,9 @@
             </div>
             <div class="col-md-6 col-xl-3">
                 <div class="card card-farm h-100">
-                    <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=800&q=80" alt="Goat farming at Harvest Farm">
+                    <img src="{% static 'images/farm_image3.jpeg' %}" alt="Goat farming at Harvest Farm">
                     <div class="card-body">
-                        <div class="card-icon"><i class="bi bi-emoji-smile"></i></div>
+                        
                         <h4>Goat Farming</h4>
                         <p>Practical goat management techniques that improve productivity, health, and sustainable herd care.</p>
                         <a href="{% url 'about' %}" class="btn btn-link px-0 text-success fw-semibold">Explore activity</a>
@@ -137,9 +136,9 @@
             </div>
             <div class="col-md-6 col-xl-3">
                 <div class="card card-farm h-100">
-                    <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=800&q=80" alt="Cattle and dairy farming at Harvest Farm">
+                    <img src="{% static 'images/farm_image4.jpeg' %}" alt="Cattle and dairy farming at Harvest Farm">
                     <div class="card-body">
-                        <div class="card-icon"><i class="bi bi-cow"></i></div>
+                    
                         <h4>Cattle and Dairy Farming</h4>
                         <p>Responsible dairy management focused on herd welfare, milk quality, and improved production systems.</p>
                         <a href="{% url 'about' %}" class="btn btn-link px-0 text-success fw-semibold">Explore activity</a>
@@ -148,9 +147,8 @@
             </div>
             <div class="col-md-6 col-xl-3">
                 <div class="card card-farm h-100">
-                    <img src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=800&q=80" alt="Banana plantation at Harvest Farm">
+                    <img src="{% static 'images/farm_image5.jpeg' %}" alt="Banana plantation at Harvest Farm">
                     <div class="card-body">
-                        <div class="card-icon"><i class="bi bi-flower1"></i></div>
                         <h4>Banana Plantation</h4>
                         <p>Fruit production and plantation management practices that support soil health and long-term farm viability.</p>
                         <a href="{% url 'about' %}" class="btn btn-link px-0 text-success fw-semibold">Explore activity</a>

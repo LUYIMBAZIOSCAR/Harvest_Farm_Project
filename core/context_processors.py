@@ -9,5 +9,5 @@ def site_context(request):
     return {
         'site_farm': farm,
         'social_links': social_links,
-        'whatsapp_number': getattr(settings, 'WHATSAPP_NUMBER', '+256000000000'),
+        'whatsapp_number': getattr(settings, 'WHATSAPP_NUMBER', '+256759002954'),
     }

@@ -142,6 +142,6 @@ CKEDITOR_5_CONFIGS = {
 CKEDITOR_5_UPLOAD_FILE_TYPES = ['jpeg', 'png', 'gif', 'bmp', 'webp', 'tiff']
 
 SITE_NAME = os.getenv('SITE_NAME', 'Harvest Farm')
-WHATSAPP_NUMBER = os.getenv('WHATSAPP_NUMBER', '+256000000000')
+WHATSAPP_NUMBER = os.getenv('WHATSAPP_NUMBER', '+256759002954')
 
 CSRF_TRUSTED_ORIGINS = [origin.strip() for origin in os.getenv('CSRF_TRUSTED_ORIGINS', 'http://localhost:8000,https://localhost:8000').split(',') if origin.strip()]
